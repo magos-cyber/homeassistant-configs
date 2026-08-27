@@ -1,0 +1,11 @@
+title: Home
+views:
+  - title: Living Room
+    cards:
+      - type: entities
+        title: Lights
+        entities:
+          - light.living_room
+          - light.kitchen
+      - type: thermostat
+        entity: climate.living_room
