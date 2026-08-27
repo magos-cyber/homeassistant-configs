@@ -1,0 +1,10 @@
+- id: 'motion_alert'
+  alias: Motion Alert
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion
+    to: 'on'
+  action:
+    service: notify.telegram
+    data:
+      message: 'Motion detected'
