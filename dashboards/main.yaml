@@ -1,0 +1,8 @@
+title: Home
+views:
+  - title: Overview
+    cards:
+      - type: entities
+        entities:
+          - light.living_room
+          - climate.bedroom
