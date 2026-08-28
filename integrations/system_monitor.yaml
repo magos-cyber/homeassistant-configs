@@ -1,0 +1,19 @@
+# System Monitor integration configuration
+# Add to configuration.yaml
+
+system_health:
+
+sensor:
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: disk_free
+        arg: /
+      - type: memory_use_percent
+      - type: processor_use
+      - type: load_1m
+      - type: load_5m
+      - type: network_in
+      - type: network_out
+      - type: last_boot
