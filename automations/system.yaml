@@ -1,0 +1,35 @@
+- id: 'cpu_high_alert'
+  alias: High CPU alert
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.system_monitor_cpu_load
+    above: 85
+    for:
+      minutes: 5
+  action:
+    service: notify.notify
+    data:
+      title: System Alert
+      message: "CPU load is {{ states('sensor.system_monitor_cpu_load') }}%"
+
+- id: 'disk_space_alert'
+  alias: Low disk space alert
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.system_monitor_disk_free
+    below: 5
+  action:
+    service: notify.notify
+    data:
+      title: System Alert
+      message: "Disk space low: {{ states('sensor.system_monitor_disk_free') }} GB free"
+
+- id: 'daily_backup'
+  alias: Daily backup
+  trigger:
+    platform: time
+    at: '03:00:00'
+  action:
+    service: hassio.backup_full
+    data:
+      name: "Auto backup {{ now().strftime('%Y-%m-%d') }}"
