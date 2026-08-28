@@ -1,0 +1,36 @@
+title: System Health
+views:
+  - title: Overview
+    cards:
+      - type: gauge
+        entity: sensor.system_monitor_cpu_load
+        name: CPU
+        severity:
+          green: 0
+          yellow: 60
+          red: 85
+      - type: gauge
+        entity: sensor.system_monitor_memory_use_percent
+        name: Memory
+        severity:
+          green: 0
+          yellow: 70
+          red: 90
+      - type: entities
+        title: Servers
+        entities:
+          - binary_sensor.pve_status
+          - binary_sensor.pve2_status
+          - sensor.uptime
+      - type: history-graph
+        title: Network
+        entities:
+          - sensor.network_in
+          - sensor.network_out
+
+  - title: Climate
+    cards:
+      - type: thermostat
+        entity: climate.living_room
+      - type: weather-forecast
+        entity: weather.home
