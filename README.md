@@ -1,16 +1,29 @@
 # HomeAssistant Configs
 
-Custom integrations, automations, and dashboards for HomeAssistant.
+Custom HomeAssistant automations, dashboards, and integrations.
 
 ## Contents
 
-| Directory | Description |
-|-----------|-------------|
-| automations/ | Automation blueprints |
-| dashboards/ | Lovelace dashboards |
-| integrations/ | Custom integrations |
-| scripts/ | Helper scripts |
+### Automations
+- `automations/lights.yaml` - Light control
+- `automations/climate.yaml` - Heating schedule
+- `automations/security.yaml` - Security alerts
+- `automations/system.yaml` - System monitoring
+
+### Dashboards
+- `dashboards/home.yaml` - Main dashboard
+- `dashboards/system_health.yaml` - System health view
+
+### Integrations
+- `integrations/system_monitor.yaml` - System Monitor setup
+
+### Scripts
+- `scripts/backup.sh` - HA backup automation
 
 ## Installation
 
-Copy to your HomeAssistant config directory.
+Copy to your HomeAssistant `config/` directory.
+
+## License
+
+MIT
